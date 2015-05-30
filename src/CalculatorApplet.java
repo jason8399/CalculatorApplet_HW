@@ -7,5 +7,6 @@ public class CalculatorApplet extends JApplet {
     @Override
     public void init() {
         super.init();
+        add(new Calculator());
     }
 }

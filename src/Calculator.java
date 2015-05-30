@@ -22,7 +22,7 @@ public class Calculator extends JPanel {
         this.add(new Control_Panel());
     }
 
-    private String getFomulaWithoutBuffer(){
+    private String getFormulaWithoutBuffer(){
         String text = textField.getText();
         return text.substring(0 ,text.length() - buffer.length());
     }
@@ -127,7 +127,7 @@ public class Calculator extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                String text  = getFomulaWithoutBuffer();
+                String text  = getFormulaWithoutBuffer();
                 if(!text.isEmpty()) {
                     if (buffer.isEmpty()) {
                         textField.setText(text.substring(0, text.length() - 3));
@@ -237,6 +237,8 @@ public class Calculator extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e){
+                //Use getActionCommand to get the value on JButton, then add it to
+                //textField and buffer
                 textField.setText(textField.getText() + e.getActionCommand());
                 buffer += e.getActionCommand();
             }
@@ -245,6 +247,7 @@ public class Calculator extends JPanel {
         class MC_ActionListener implements ActionListener {
 
             @Override
+            //Set memory to 0
             public void actionPerformed(ActionEvent e){
                 memory = 0;
             }
@@ -254,6 +257,7 @@ public class Calculator extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e){
+                //Check last input is digit ,and add memory to the end of formula
                 String text = textField.getText();
                 if(text.isEmpty() || !Character.isDigit(text.charAt(text.length() - 1))){
                     textField.setText(textField.getText() + memory);
@@ -264,6 +268,7 @@ public class Calculator extends JPanel {
         class MS_ActionListener implements ActionListener {
 
             @Override
+            //Store buffer to memory
             public void actionPerformed(ActionEvent e){
                 memory = Double.parseDouble(buffer);
             }
@@ -272,6 +277,7 @@ public class Calculator extends JPanel {
         class MAdd_ActionListener implements ActionListener {
 
             @Override
+            //Add buffer to memory
             public void actionPerformed(ActionEvent e){
                 memory += Double.parseDouble(buffer);
             }
@@ -283,8 +289,10 @@ public class Calculator extends JPanel {
             public void actionPerformed(ActionEvent e){
                 String text = textField.getText();
                 if(!text.isEmpty() && Character.isDigit(text.charAt(text.length() - 1))){
+                    //Add four fundament to textfiled not repeatedly
                     textField.setText(text + " " + e.getActionCommand() + " ");
                 }else{
+                    //Change exist four fundament
                     textField.setText(text.substring(0, text.length() - 3) + " " + e.getActionCommand() + " ");
                 }
                 buffer = "";
@@ -297,8 +305,9 @@ public class Calculator extends JPanel {
             public void actionPerformed(ActionEvent e){
                 String text = textField.getText();
                 double temp;
+                //Square root of buffer
                 if(!text.isEmpty() && Character.isDigit(text.charAt(text.length() - 1))) {
-                    text = getFomulaWithoutBuffer();
+                    text = getFormulaWithoutBuffer();
                     if(buffer.charAt(0) == '-'){
                         //ERROR
                     } else {
@@ -318,15 +327,12 @@ public class Calculator extends JPanel {
             public void actionPerformed(ActionEvent e){
                 String text = textField.getText();
                 double temp;
+                //Turn to percentage
                 if(!text.isEmpty() && Character.isDigit(text.charAt(text.length() - 1))) {
-                    text = getFomulaWithoutBuffer();
-                    if(buffer.charAt(0) == '-'){
-                        //ERROR
-                    } else {
-                        temp = Double.parseDouble(buffer);
-                        temp *= 0.01;
-                        buffer = String.format("%.2f", temp) ;
-                    }
+                    text = getFormulaWithoutBuffer();
+                    temp = Double.parseDouble(buffer);
+                    temp *= 0.01;
+                    buffer = String.format("%.2f", temp) ;
                     text += buffer;
                     textField.setText(text);
                 }
@@ -339,8 +345,9 @@ public class Calculator extends JPanel {
             public void actionPerformed(ActionEvent e){
                 String text = textField.getText();
                 double temp;
+                //Turn to Mul inverse
                 if(!text.isEmpty() && Character.isDigit(text.charAt(text.length() - 1))) {
-                    text = getFomulaWithoutBuffer();
+                    text = getFormulaWithoutBuffer();
                     temp = Double.parseDouble(buffer);
                     temp = 1 / temp;
                     buffer = String.format("%.2f", temp) ;
@@ -356,10 +363,12 @@ public class Calculator extends JPanel {
             public void actionPerformed(ActionEvent e){
                 String text = textField.getText();
                 if(!text.isEmpty() && Character.isDigit(text.charAt(text.length() - 1))) {
-                    text = getFomulaWithoutBuffer();
+                    text = getFormulaWithoutBuffer();
                     if(buffer.charAt(0) == '-'){
+                        //Turn negative to positive
                         buffer = buffer.substring(1);
                     } else {
+                        //Turn positive to negative
                         buffer = "-" + buffer;
                     }
                     text += buffer;
@@ -373,6 +382,7 @@ public class Calculator extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e){
                 String text = textField.getText();
+                //TODO check repeatedly point
                 if(!text.isEmpty() && Character.isDigit(text.charAt(text.length() - 1))){
                     textField.setText(textField.getText() + e.getActionCommand());
                 }

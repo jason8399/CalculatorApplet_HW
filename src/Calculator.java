@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by JasonPan on 5/30/15.
@@ -24,6 +26,30 @@ public class Calculator extends JPanel {
             this.add(back = new JButton("Back"));
             this.add(clearEntry = new JButton("CE"));
             this.add(clear = new JButton("C"));
+        }
+
+        class C_ActionListener implements ActionListener{
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        }
+
+        class CE_ActionListener implements ActionListener{
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        }
+
+        class Back_ActionListener implements ActionListener{
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
         }
     }
 
@@ -79,6 +105,200 @@ public class Calculator extends JPanel {
             this.add(point = new JButton("."));
             this.add(add = new JButton("+"));
             this.add(eq = new JButton("="));
+        }
+
+
+
+        class Button0_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button1_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button2_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button3_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button4_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button5_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button6_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button7_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button8_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Button9_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class MC_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class MR_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class MS_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class MAdd_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Add_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Sub_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Mul_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Div_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Sqroot_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Percent_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Mulinv_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Neg_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Point_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
+        }
+
+        class Eq_ActionListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            }
         }
     }
 }

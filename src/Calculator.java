@@ -16,7 +16,7 @@ public class Calculator extends JPanel {
 
     Calculator(){
         this.buffer = "";
-        this.setLayout(new GridLayout(0, 1, 0 ,0));
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(textField = new JTextField());
         this.add(new C_CE_BS_Panel());
         this.add(new Control_Panel());
